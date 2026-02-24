@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Performances on Crescent Chinese Music Studio</title>
-    <link>https://your-domain.com/performances/</link>
+    <link>http://localhost:1313/performances/</link>
     <description>Recent content in Performances on Crescent Chinese Music Studio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Feb 2026 19:00:00 -0500</lastBuildDate>
-    <atom:link href="https://your-domain.com/performances/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/performances/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring Community Concert</title>
-      <link>https://your-domain.com/performances/2026-03-12-spring-concert/</link>
+      <link>http://localhost:1313/performances/2026-03-12-spring-concert/</link>
       <pubDate>Thu, 12 Feb 2026 19:00:00 -0500</pubDate>
-      <guid>https://your-domain.com/performances/2026-03-12-spring-concert/</guid>
+      <guid>http://localhost:1313/performances/2026-03-12-spring-concert/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;我们将在 RTP 社区中心举办春季音乐会，演奏新民乐与改编流行曲。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Collaboration Concert: East Meets West</title>
-      <link>https://your-domain.com/performances/2026-05-20-collab-concert/</link>
+      <link>http://localhost:1313/performances/2026-05-20-collab-concert/</link>
       <pubDate>Thu, 05 Feb 2026 19:30:00 -0500</pubDate>
-      <guid>https://your-domain.com/performances/2026-05-20-collab-concert/</guid>
+      <guid>http://localhost:1313/performances/2026-05-20-collab-concert/</guid>
       <description>&lt;p&gt;与本地电声乐队合作，演出跨界曲目，融合中西乐器与流行元素。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Folk Night at the Park</title>
-      <link>https://your-domain.com/performances/2026-04-05-folk-night/</link>
+      <link>http://localhost:1313/performances/2026-04-05-folk-night/</link>
       <pubDate>Thu, 15 Jan 2026 18:30:00 -0500</pubDate>
-      <guid>https://your-domain.com/performances/2026-04-05-folk-night/</guid>
+      <guid>http://localhost:1313/performances/2026-04-05-folk-night/</guid>
       <description>&lt;p&gt;户外民乐之夜，免费入场，欢迎家庭与朋友参加。&lt;/p&gt;</description>
     </item>
   </channel>
