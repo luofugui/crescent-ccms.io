@@ -88,6 +88,32 @@
   }
 }
 
+/* Style the submenu toggle as a small chevron on mobile (avoid plain bar) */
+.dropdown-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.25rem;
+}
+.dropdown-toggle::before {
+  content: '▾';
+  display: inline-block;
+  transition: transform .18s ease;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.dropdown-parent.open > .dropdown-toggle::before {
+  transform: rotate(-180deg);
+}
+
+/* Ensure desktop does not show the mobile toggles (the template adds dn-ns to the button) */
+.dropdown-toggle.dn-ns { display: inline-block; }
+@media (min-width: 60em) {
+  .dropdown-toggle.dn-ns { display: none; }
+}
+
 /* Responsive iframe wrapper for embedded Google Forms */
 .responsive-iframe {
   position: relative;
