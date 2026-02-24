@@ -33,7 +33,37 @@
 
 /* Mobile: make dropdown part of the document flow so touch works predictably */
 @media (max-width: 60em) {
-  .dropdown { position: static; transform: none; opacity: 1; visibility: visible; pointer-events: auto; }
+  /* On small screens keep dropdowns collapsed by default and show when the parent has .open */
+  .dropdown {
+    position: static;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .18s ease, opacity .12s ease, visibility .12s;
+  }
+
+  .dropdown-parent.open > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    max-height: 500px; /* large enough to show menu items; adjust if needed */
+  }
+
+  /* Toggle button visible only on small screens */
+  .dropdown-toggle {
+    display: inline-block;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    padding: .25rem .5rem;
+    margin-left: .25rem;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+  }
 }
 
 /* Responsive iframe wrapper for embedded Google Forms */
