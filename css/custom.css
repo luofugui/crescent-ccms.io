@@ -33,7 +33,29 @@
 
 /* Mobile: make dropdown part of the document flow so touch works predictably */
 @media (max-width: 60em) {
-  /* On small screens keep dropdowns collapsed by default and show when the parent has .open */
+  /* On small screens hide the full nav behind a hamburger and keep dropdowns collapsed by default */
+
+  /* Main nav: hidden by default on small screens */
+  .nav-toggle-main { display: inline-block; }
+  .site-nav { display: none; }
+  .site-nav.open { display: block; }
+
+  /* Simple styling for hamburger */
+  .nav-toggle-main { background: transparent; border: 0; padding: .25rem; cursor: pointer; }
+  .nav-toggle-box { display: inline-block; width: 1.5rem; height: 1rem; position: relative; }
+  .nav-toggle-inner, .nav-toggle-inner::before, .nav-toggle-inner::after { display: block; background: #fff; height: 2px; width: 100%; position: absolute; left: 0; }
+  .nav-toggle-inner { top: 50%; transform: translateY(-50%); }
+  .nav-toggle-inner::before { content: ''; top: -6px; }
+  .nav-toggle-inner::after { content: ''; top: 6px; }
+
+  /* When nav is open, show the site-nav */
+  .site-nav.open { display: block; }
+
+  /* Ensure list stacks vertically on mobile */
+  .site-nav ul { display: block; }
+  .site-nav li { display: block; }
+
+  /* Keep dropdowns collapsed by default and show when the parent has .open */
   .dropdown {
     position: static;
     transform: none;
