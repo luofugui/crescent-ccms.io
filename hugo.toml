@@ -1,126 +1,71 @@
 theme = "ananke"
 
-baseURL = "https://your-domain.com/"
+baseURL = "https://luofugui.github.io/crescent-ccms.io/"
 languageCode = "en-us"
 title = "Crescent Chinese Music Studio"
+
 [params]
-    theme = "ananke"
+  site_logo = "img/logo.png"
+  custom_css = ["css/custom.css"]
 
-    baseURL = "https://luofugui.github.io/crescent-ccms.io/"
-    languageCode = "en-us"
-    title = "Crescent Chinese Music Studio"
+# Show recent posts section on homepage; use 'performances' as the main section
+mainSections = ["performances"]
 
-    [params]
-      site_logo = "img/logo.png"
-      custom_css = ["css/custom.css"]
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    identifier = "about"
+    url  = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Musician"
+    url = "/about/musician/"
+    parent = "about"
+    weight = 21
+  [[menu.main]]
+    name = "Orchestra"
+    url = "/about/orchestra/"
+    parent = "about"
+    weight = 22
+  [[menu.main]]
+    name = "Leadership"
+    url = "/about/leadership/"
+    parent = "about"
+    weight = 23
+  [[menu.main]]
+    name = "Join"
+    url = "/about/join/"
+    parent = "about"
+    weight = 24
+  [[menu.main]]
+    name = "Contact Us"
+    url = "/contact/"
+    parent = "about"
+    weight = 25
+  [[menu.main]]
+    name = "Gallery"
+    url  = "/gallery/"
+    weight = 3
+  [[menu.main]]
+    name = "Videos"
+    url  = "/videos/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url  = "/contact/"
+    weight = 5
+  [[menu.main]]
+    name = "Recent Performances"
+    url = "/performances/"
+    weight = 6
 
-    # Show recent posts section on homepage; use 'performances' as the main section
-    mainSections = ["performances"]
-
-    [menu]
-      [[menu.main]]
-        name = "Home"
-        url  = "/"
-        weight = 1
-      [[menu.main]]
-        name = "About"
-        identifier = "about"
-        url  = "/about/"
-        weight = 2
-      [[menu.main]]
-        name = "Musician"
-        url = "/about/musician/"
-        parent = "about"
-        weight = 21
-      [[menu.main]]
-        name = "Orchestra"
-        url = "/about/orchestra/"
-        parent = "about"
-        weight = 22
-      [[menu.main]]
-        name = "Leadership"
-        url = "/about/leadership/"
-        parent = "about"
-        weight = 23
-      [[menu.main]]
-        name = "Join"
-        url = "/about/join/"
-        parent = "about"
-        weight = 24
-      [[menu.main]]
-        name = "Contact Us"
-        url = "/contact/"
-        parent = "about"
-        weight = 25
-      [[menu.main]]
-        theme = "ananke"
-
-        baseURL = "https://luofugui.github.io/crescent-ccms.io/"
-        languageCode = "en-us"
-        title = "Crescent Chinese Music Studio"
-
-        [params]
-          site_logo = "img/logo.png"
-          custom_css = ["css/custom.css"]
-
-        # Show recent posts section on homepage; use 'performances' as the main section
-        mainSections = ["performances"]
-
-        [menu]
-          [[menu.main]]
-            name = "Home"
-            url  = "/"
-            weight = 1
-          [[menu.main]]
-            name = "About"
-            identifier = "about"
-            url  = "/about/"
-            weight = 2
-          [[menu.main]]
-            name = "Musician"
-            url = "/about/musician/"
-            parent = "about"
-            weight = 21
-          [[menu.main]]
-            name = "Orchestra"
-            url = "/about/orchestra/"
-            parent = "about"
-            weight = 22
-          [[menu.main]]
-            name = "Leadership"
-            url = "/about/leadership/"
-            parent = "about"
-            weight = 23
-          [[menu.main]]
-            name = "Join"
-            url = "/about/join/"
-            parent = "about"
-            weight = 24
-          [[menu.main]]
-            name = "Contact Us"
-            url = "/contact/"
-            parent = "about"
-            weight = 25
-          [[menu.main]]
-            name = "Gallery"
-            url  = "/gallery/"
-            weight = 3
-          [[menu.main]]
-            name = "Videos"
-            url  = "/videos/"
-            weight = 4
-          [[menu.main]]
-            name = "Contact"
-            url  = "/contact/"
-            weight = 5
-          [[menu.main]]
-            name = "Recent Performances"
-            url = "/performances/"
-            weight = 6
-
-        [markup]
-          [markup.goldmark]
-            [markup.goldmark.renderer]
-              unsafe = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 
