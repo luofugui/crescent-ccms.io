@@ -1,0 +1,7 @@
+# Ignore Hugo generated public directory - Actions builds and publishes it
+public/
+
+# Ignore common editor / OS files
+.DS_Store
+node_modules/
+*.log
