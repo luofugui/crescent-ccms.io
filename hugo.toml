@@ -42,11 +42,6 @@ mainSections = ["performances"]
     parent = "about"
     weight = 24
   [[menu.main]]
-    name = "Contact Us"
-    url = "/contact/"
-    parent = "about"
-    weight = 25
-  [[menu.main]]
     name = "Gallery"
     url  = "/gallery/"
     weight = 3
@@ -57,15 +52,13 @@ mainSections = ["performances"]
   [[menu.main]]
     name = "Contact"
     url  = "/contact/"
-    weight = 5
-  [[menu.main]]
-    name = "Recent Performances"
-    url = "/performances/"
     weight = 6
+  [[menu.main]]
+    name = "Performances"
+    url = "/performances/"
+    weight = 5
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
-
