@@ -7,9 +7,26 @@ title = "Crescent Chinese Music Studio"
 [params]
   site_logo = "img/logo.png"
   custom_css = ["css/custom.css"]
+  # Show recent posts section on homepage; use 'performances' as the main section
+  mainSections = ["performances"]
 
-# Show recent posts section on homepage; use 'performances' as the main section
-mainSections = ["performances"]
+  [params.ananke]
+    show_recent_posts = true
+
+  [params.ananke.home]
+    content_alignment = "center"
+
+  [params.ananke.social]
+    icon_path = "ananke/socials/%s.svg"
+
+  [params.ananke.social.follow]
+    new_window_icon = false
+    networks = ["facebook", "instagram", "youtube"]
+
+  [params.ananke.social.share]
+    icons = true
+    sharetext = true
+    networks = ["facebook", "twitter", "email"]
 
 [menu]
   [[menu.main]]
@@ -21,26 +38,6 @@ mainSections = ["performances"]
     identifier = "about"
     url  = "/about/"
     weight = 2
-  [[menu.main]]
-    name = "Musician"
-    url = "/about/musician/"
-    parent = "about"
-    weight = 21
-  [[menu.main]]
-    name = "Orchestra"
-    url = "/about/orchestra/"
-    parent = "about"
-    weight = 22
-  [[menu.main]]
-    name = "Leadership"
-    url = "/about/leadership/"
-    parent = "about"
-    weight = 23
-  [[menu.main]]
-    name = "Join"
-    url = "/about/join/"
-    parent = "about"
-    weight = 24
   [[menu.main]]
     name = "Gallery"
     url  = "/gallery/"

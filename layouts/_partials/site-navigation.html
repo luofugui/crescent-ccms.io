@@ -1,5 +1,5 @@
 <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
+  <div class="flex items-center justify-between">
     <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 hover-white white-90 dib no-underline">
       {{ with .Site.Params.site_logo }}
         <img src="{{ urls.RelURL . }}" class="w100 mw5-ns" alt="{{ $.Site.Title }}" />
@@ -7,22 +7,23 @@
         {{ .Site.Title }}
       {{ end }}
     </a>
-    <div class="flex-l items-center">
+    <button id="menu-trigger" class="f3 white bg-transparent bn pointer" aria-label="Toggle Navigation">☰</button>
+  </div>
+  <div id="menu-content" class="dn">
+    <div class="flex flex-column items-center mt3 bg-black-80 pa3 br3">
       {{ partials.Include "i18nlist.html" . }}
       {{ if .Site.Menus.main }}
-        <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pr0 ml3" "pl0 mr3" }}">
+        <ul class="list pl0 tc w-100">
           {{ range .Site.Menus.main }}
-          {{ $hasChildren := .HasChildren }}
-          <li class="list f5 f4-ns fw4 dib {{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }} {{ if $hasChildren }}relative dropdown-parent{{ end }}">
-            <a class="hover-white white-90 no-underline" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}">
+          <li class="pv2">
+            <a class="f4 fw4 hover-white white-90 no-underline" href="{{ .URL }}">
               {{ .Name }}
             </a>
-
-            {{ if $hasChildren }}
-              <ul class="dropdown bg-white pa2 shadow-1" role="menu">
+            {{ if .HasChildren }}
+              <ul class="list pl0 pt2">
                 {{ range .Children }}
-                  <li class="list pa2">
-                    <a class="link dim black-80 no-underline" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
+                  <li class="pv1">
+                    <a class="f5 link dim white-60 no-underline" href="{{ .URL }}">{{ .Name }}</a>
                   </li>
                 {{ end }}
               </ul>
@@ -31,7 +32,9 @@
           {{ end }}
         </ul>
       {{ end }}
-      {{ partials.IncludeCached "social/follow.html" . }}
+      <div class="pv3">
+        {{ partials.IncludeCached "social/follow.html" . }}
+      </div>
     </div>
   </div>
 </nav>

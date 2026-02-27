@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <color id="china-red" value="#C21F30"/>
+    <color id="gold" value="#D4AF37"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&amp;display=swap');
+      .logo-text { font-family: 'Noto Serif SC', serif; font-weight: bold; }
+    </style>
+  </defs>
+
+  <circle cx="250" cy="250" r="230" fill="#FFFAFA" stroke="#D4AF37" stroke-width="8"/>
+  <circle cx="250" cy="250" r="218" fill="none" stroke="#C21F30" stroke-width="3"/>
+
+  <g transform="translate(250, 240) scale(0.85)">
+    <path d="M-45,-130 C-75,-100 -95,-10 -65,50 C-35,110 25,130 65,90 C95,60 85,-30 45,-90 C15,-120 -15,-140 -45,-130 Z" fill="#C21F30" opacity="0.85"/>
+    <path d="M-45,-130 L-35,-160 M-20,-135 L-10,-165 M5,-140 L15,-170 M30,-145 L40,-175" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-40,-120 C-10,-110 10,-110 40,-130" stroke="#D4AF37" stroke-width="2" fill="none"/> <g transform="rotate(-15)">
+        <path d="M-150,0 L150,0" stroke="#D4AF37" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="-110" cy="0" r="5" fill="#C21F30"/> <circle cx="-70" cy="0" r="5" fill="#C21F30" opacity="0.8"/>  <circle cx="-30" cy="0" r="5" fill="#C21F30"/>
+        <circle cx="10" cy="0" r="5" fill="#C21F30"/>
+        <circle cx="50" cy="0" r="5" fill="#C21F30"/>
+        <circle cx="90" cy="0" r="5" fill="#C21F30"/>
+        <path d="M150,0 C170,10 170,30 160,50 M155,0 C175,15 175,35 165,55" stroke="#C21F30" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <path id="text-path-arc" d="M 110,300 A 140,140 0 0,0 390,300" fill="none"/>
+
+  <text class="logo-text" font-size="52" fill="#C21F30" text-anchor="middle">
+    <textPath href="#text-path-arc" startOffset="50%" dominant-baseline="middle">
+      北卡民乐团
+    </textPath>
+  </text>
+  
+  <text x="250" y="370" font-size="16" font-family="serif" fill="#D4AF37" text-anchor="middle" letter-spacing="1">NC CHINESE MUSIC ENSEMBLE</text>
+</svg>

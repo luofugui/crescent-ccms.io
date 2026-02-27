@@ -1,0 +1,21 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var trigger = document.getElementById('menu-trigger');
+    var content = document.getElementById('menu-content');
+    
+    if (trigger && content) {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (content.classList.contains('dn')) {
+          content.classList.remove('dn');
+          content.classList.add('db');
+          trigger.innerHTML = '✕';
+        } else {
+          content.classList.add('dn');
+          content.classList.remove('db');
+          trigger.innerHTML = '☰';
+        }
+      });
+    }
+  });
+</script>
