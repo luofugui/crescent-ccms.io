@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="instrument" transform="translate(40, 30)">
+    <path d="M75 10 Q85 -5 95 10 L98 40 L72 40 Z" fill="#7D4F45" />
+    
+    <rect x="82" y="40" width="6" height="160" fill="#7D4F45" />
+    <rect x="50" y="65" width="70" height="7" rx="2" fill="#7D4F45" />
+    <rect x="50" y="95" width="70" height="7" rx="2" fill="#7D4F45" />
+    <rect x="50" y="125" width="70" height="7" rx="2" fill="#7D4F45" />
+    
+    <circle cx="85" cy="320" r="95" fill="#7D4F45" />
+    
+    <path d="M45 300 Q30 320 45 345" fill="none" stroke="#E5D3B3" stroke-width="1.5" opacity="0.8"/>
+    <path d="M125 300 Q140 320 125 345" fill="none" stroke="#E5D3B3" stroke-width="1.5" opacity="0.8"/>
+    
+    <g stroke="#E5D3B3" stroke-width="0.8" opacity="0.9">
+      <line x1="81" y1="50" x2="81" y2="415" />
+      <line x1="83" y1="50" x2="83" y2="415" />
+      <line x1="85" y1="50" x2="85" y2="415" />
+      <line x1="87" y1="50" x2="87" y2="415" />
+      <line x1="89" y1="50" x2="89" y2="415" />
+    </g>
+    
+    <g fill="#E5D3B3">
+      <rect x="77" y="240" width="16" height="4" />
+      <rect x="77" y="265" width="16" height="4" />
+      <rect x="77" y="290" width="16" height="4" />
+      <rect x="77" y="315" width="16" height="4" />
+      <path d="M75 390 Q85 405 95 390 L95 405 L75 405 Z" />
+    </g>
+  </g>
+
+  <g fill="#FFFFFF" font-family="Georgia, serif" style="white-space: pre;">
+    <text x="200" y="150" font-size="36" letter-spacing="1">NC CHINESE MUSIC</text>
+    <text x="200" y="200" font-size="36" letter-spacing="1">ENSEMBLE, NCCME</text>
+  </g>
+
+  <line x1="310" y1="230" x2="340" y2="270" stroke="#FFFFFF" stroke-width="1.5" />
+
+  <g fill="#FFFFFF" font-family="'Microsoft YaHei', sans-serif" font-weight="bold">
+    <text x="270" y="340" font-size="75">北 卡</text>
+    <text x="270" y="440" font-size="75">民 乐 团</text>
+  </g>
+</svg>

@@ -4,6 +4,7 @@ title = "Contact"
 draft = false
 # featured_image = "/images/contact-hero.jpg"
 # omit_header_text = true
+featured_image = "/img/home.jpg"
 +++
 
 如果你想了解更多或有合作/演出邀请，请通过下面的表单与我们联系。

@@ -7,10 +7,10 @@
         {{ .Site.Title }}
       {{ end }}
     </a>
-    <button id="menu-trigger" class="f3 white bg-transparent bn pointer" aria-label="Toggle Navigation">☰</button>
+    <button id="menu-trigger" class="f2 white bg-transparent bn pointer" aria-label="Toggle Navigation">☰</button>
   </div>
   <div id="menu-content" class="dn">
-    <div class="flex flex-column items-center mt3 bg-black-80 pa3 br3">
+    <div class="flex flex-column items-center mt3 bg-black-60 pa3 br3">
       {{ partials.Include "i18nlist.html" . }}
       {{ if .Site.Menus.main }}
         <ul class="list pl0 tc w-100">
