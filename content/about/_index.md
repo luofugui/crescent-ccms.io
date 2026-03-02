@@ -1,8 +1,9 @@
 +++
-date = '2026-02-23T19:50:51-05:00'
-draft = true
+date = '2024-02-23T19:50:51-05:00'
+draft = false
 title = 'About'
 featured_image = "/img/home.jpg"
+layout = "single"
 +++
 
 北卡民乐团（NC Chinese Music Ensemble, NCCME）是成立于北卡三角区的一个小型非营利性音乐工作室，其宗旨是传播中国音乐文化、服务与丰富社区文化生活。组合包括笛子、琵琶、二胡、古筝、扬琴、中阮等中国民族乐器，以及钢琴和吉他等西洋乐器，并配合使用电声乐队等西方音乐元素来演奏流行音乐、新民乐和传统音乐。
@@ -12,28 +13,28 @@ Crescent Chinese Music Studio is a non-profit music studio established in the No
 
 <div class="flex flex-wrap justify-between mt4">
   <div class="w-100 w-45-ns mb4 bg-near-white br2 shadow-4 grow">
-    <a href="/about/musician/" class="db pa4 link dim black no-underline">
+    <a href="musician/" class="db pa4 link dim black no-underline">
       <h3 class="f3 mt0 mb2">Musician</h3>
       <p class="f5 lh-copy black-60">Meet our talented musicians.</p>
     </a>
   </div>
 
   <div class="w-100 w-45-ns mb4 bg-near-white br2 shadow-4 grow">
-    <a href="/about/orchestra/" class="db pa4 link dim black no-underline">
+    <a href="orchestra/" class="db pa4 link dim black no-underline">
       <h3 class="f3 mt0 mb2">Orchestra</h3>
       <p class="f5 lh-copy black-60">Learn about our orchestra structure.</p>
     </a>
   </div>
 
   <div class="w-100 w-45-ns mb4 bg-near-white br2 shadow-4 grow">
-    <a href="/about/leadership/" class="db pa4 link dim black no-underline">
+    <a href="leadership/" class="db pa4 link dim black no-underline">
       <h3 class="f3 mt0 mb2">Leadership</h3>
       <p class="f5 lh-copy black-60">Our team leaders and directors.</p>
     </a>
   </div>
 
   <div class="w-100 w-45-ns mb4 bg-near-white br2 shadow-4 grow">
-    <a href="/about/join/" class="db pa4 link dim black no-underline">
+    <a href="join/" class="db pa4 link dim black no-underline">
       <h3 class="f3 mt0 mb2">Join Us</h3>
       <p class="f5 lh-copy black-60">Become a part of our community.</p>
     </a>

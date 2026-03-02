@@ -2,7 +2,7 @@ theme = "ananke"
 
 baseURL = "https://luofugui.github.io/crescent-ccms.io/"
 languageCode = "en-us"
-title = "Crescent Chinese Music Studio"
+title = "NC Chinese Music Ensemble, NCCME"
 
 [params]
   site_logo = "img/logo1.svg"
@@ -21,12 +21,21 @@ title = "Crescent Chinese Music Studio"
 
   [params.ananke.social.follow]
     new_window_icon = false
-    networks = ["facebook", "instagram", "youtube"]
+    networks = ["facebook", "instagram", "youtube", "email"]
 
   [params.ananke.social.share]
     icons = true
     sharetext = true
     networks = ["facebook", "twitter", "email"]
+
+  [params.ananke.social.networks.email]
+    slug = "email"
+    icon = "envelope"
+    profile = "mailto:%s"
+    label = "Email"
+
+  [params.ananke.social.email]
+    username = "your-email@example.com"
 
 [menu]
   [[menu.main]]
