@@ -1,0 +1,98 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+      {{ .Content }}
+    </section>
+    
+    {{/* 1. Group images by directory (Folder Name) */}}
+    {{ $groups := dict }}
+    {{ range .Resources.ByType "image" }}
+      {{ $dir := path.Dir .Name }}
+      {{ if eq $dir "." }}
+        {{ $dir = "General" }}
+      {{ end }}
+      {{ $list := index $groups $dir | default slice }}
+      {{ $list = $list | append . }}
+      {{ $groups = merge $groups (dict $dir $list) }}
+    {{ end }}
+
+    {{/* 2. Render blocks sorted by folder name */}}
+    {{ $keys := slice }}
+    {{ range $k, $v := $groups }}
+      {{ $keys = $keys | append $k }}
+    {{ end }}
+
+    {{ range $index, $name := sort $keys }}
+      {{ $images := index $groups $name }}
+      <div class="mb5 bg-white pa3 pa4-ns br3">
+        <h2 class="f2 fw6 pa3 mv0 tc bb b--black-10 w-90 center">{{ $name }}</h2>
+        <div class="flex flex-wrap justify-center mw9 center pt3">
+          {{ range $images }}
+            <div class="w-100 w-50-m w-third-l pa3">
+              {{/* Thumbnail */}}
+              {{ $thumbnail := .Fill "600x400 center" }}
+              
+              {{/* Image Item with Lightbox trigger */}}
+              <div class="grow shadow-4 br3 overflow-hidden pointer gallery-item" style="cursor: zoom-in;" data-src="{{ .RelPermalink }}">
+                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Name }}" class="db w-100" loading="lazy">
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+    {{/* 3. Render External Blocks from Front Matter (Optional) */}}
+    {{ range $index, $block := .Params.external_gallery }}
+      <div class="mb5 bg-white pa3 pa4-ns br3">
+        <h2 class="f2 fw6 pa3 mv0 tc bb b--black-10 w-90 center">{{ $block.title }}</h2>
+        <div class="flex flex-wrap justify-center mw9 center pt3">
+          {{ range $block.images }}
+            <div class="w-100 w-50-m w-third-l pa3">
+              {{/* Use CSS aspect-ratio to mimic the local thumbnail crop */}}
+              <div class="grow shadow-4 br3 overflow-hidden pointer gallery-item" style="cursor: zoom-in; aspect-ratio: 3/2;" data-src="{{ . }}">
+                <img src="{{ . }}" class="db w-100 h-100" style="object-fit: cover;" loading="lazy">
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+    {{/* 4. Render Embedded Albums (Raw HTML for Google Photos etc.) */}}
+    {{ range .Params.embedded_albums }}
+      <div class="mb5 pa3 pa4-ns br3 bg-white">
+        {{ if .title }}<h2 class="f2 fw6 pa3 mv0 tc bb b--black-10 w-90 center">{{ .title }}</h2>{{ end }}
+        <div class="flex justify-center pt3">
+          {{ .content | safeHTML }}
+        </div>
+      </div>
+    {{ end }}
+
+    {{/* 5. Lightbox Modal */}}
+    <div id="lightbox" class="fixed top-0 left-0 w-100 h-100 bg-black-90 items-center justify-center dn" style="z-index: 9999; cursor: zoom-out;">
+      <img id="lightbox-img" src="" class="shadow-3" style="max-width: 90vw; max-height: 90vh; object-fit: contain;">
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          item.addEventListener('click', () => {
+            lightboxImg.src = item.getAttribute('data-src');
+            lightbox.classList.remove('dn');
+            lightbox.classList.add('flex');
+          });
+        });
+
+        lightbox.addEventListener('click', () => {
+          lightbox.classList.add('dn');
+          lightbox.classList.remove('flex');
+          lightboxImg.src = '';
+        });
+      });
+    </script>
+  </article>
+{{ end }}
