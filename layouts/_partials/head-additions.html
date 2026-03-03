@@ -17,5 +17,25 @@
         }
       });
     }
+
+    // Back to Top Button Logic
+    var backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove('o-0');
+          backToTopBtn.classList.add('o-100');
+          backToTopBtn.style.pointerEvents = 'auto';
+        } else {
+          backToTopBtn.classList.remove('o-100');
+          backToTopBtn.classList.add('o-0');
+          backToTopBtn.style.pointerEvents = 'none';
+        }
+      });
+
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   });
 </script>
