@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="pa3 pa5-ns">
+  <h1 class="f3 f1-ns">{{ .Title }}</h1>
+  <div class="lh-copy measure-wide">
+    {{ .Content }}
+  </div>
+
+  {{/* Define a list of background colors to cycle through */}}
+  {{ $colors := slice "bg-near-white" "bg-light-gray" "bg-washed-blue" "bg-washed-green" }}
+
+  {{/* Loop through each instrument category defined in the front matter */}}
+  {{ range $index, $category := .Params.categories }}
+    {{/* Pick a color from the list based on the loop index */}}
+    {{ $color := index $colors (mod $index (len $colors)) }}
+
+    {{/* Create a container for the category block with spacing and background color */}}
+    <div class="pa4 mt5 br3 shadow-1 {{ $color }}">
+      <h2 class="f2 mt0">{{ .name }}</h2>
+      <div class="flex flex-wrap justify-around">
+        {{/* Loop through each musician in the category */}}
+        {{ range .musicians }}
+          <div class="w-100 w-45-l pa3">
+            <div class="flex flex-column flex-row-ns items-center">
+              <!-- Left Column: Image -->
+              <div class="w-100 w-30-ns">
+                {{ $image := $.Page.Resources.GetMatch .photo }}
+                {{ if $image }}
+                  {{/* Display the original image. The browser will scale it to fit the container. */}}
+                  <img src="{{ $image.RelPermalink }}" class="db w-100 br2" alt="Photo of {{ .name }}">
+                {{ else }}
+                  <p style="color: red; font-size: 12px;">Image not found in page bundle: {{ .photo }}</p>
+                {{ end }}
+              </div>
+              <!-- Right Column: Text -->
+              <div class="w-100 w-70-ns pa2 pl3-ns">
+                <h3 class="f3 mt3 mt0-ns">{{ .name }} - {{ .instrument }}</h3>
+                <p class="f4 black-70 lh-copy">{{ .bio | markdownify }}</p>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</div>
+{{ end }}
