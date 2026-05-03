@@ -1,9 +1,10 @@
 +++
-title = "乐手/音乐家 Musician"
+title = "乐手/音乐家 Musicians"
 date = 2026-02-23T12:00:00-05:00
 draft = false
 featured_image = "/img/home.jpg"
 layout = "musicians" # Use the new custom layout
+aliases = ["/about/musician/"]
 
 # Musician data starts here
 [[categories]]
@@ -18,11 +19,6 @@ layout = "musicians" # Use the new custom layout
     instrument = "琵琶 (Pipa)"
     photo = "SunnyShang.jpg"
     bio = "Sunny Shang currently resides and works in North Carolina and has studied Pipa, the traditional Chinese instrument, for seven years in her early life. During her university days from 2006 to 2010, she was a member of the Central University of Finance and Economics Chinese Orchestra.\n\n尚晓娟，现居北卡，学习琵琶七年，曾在 2006-2010 大学期间为中央财经大学民乐团成员。"
-  [[categories.musicians]]
-    name = "Another Musician"
-    instrument = "琵琶 (Pipa)"
-    photo = "placeholder.jpg"
-    bio = "简介内容... (Bio content...)"
 
 [[categories]]
   name = "弦乐 (Bowed String Instruments)"
@@ -48,7 +44,7 @@ layout = "musicians" # Use the new custom layout
     name = "Yanxin \"Jeff\" Luo"
     instrument = "笛子 / 箫 / 吉他 (Dizi / Xiao / Guitar)"
     photo = "YanxinLuo.png"
-    bio = "Yanxin \"Jeff\" Luo is a software student and former embedded engineer. He began playing the Dizi, the Chinese bamboo flute, at age ten. A versatile music lover, Jeff has founded and performed in folk and electro-acoustic bands, and is skilled in several instruments including the Xiao and guitar. He is passionate about sharing the vibrant sounds of Chinese woodwinds with the North Carolina community.\n\nAbout the instrument: The Dizi is a traditional Chinese transverse flute with a history of over 9,000 years. Its unique, shimmering timbre is created by the Di Mo, a thin bamboo membrane that vibrates when played. Known for its expressive range, the Dizi can evoke both the peaceful stillness of nature and the jubilant energy of a festive celebration.\n\n罗彦鑫（Jeff）是一名软件专业学生，也曾从事嵌入式工程工作。他十岁开始学习笛子，热爱多种音乐形式，曾组建并参与民谣乐队和电声乐队，也擅长箫、吉他等乐器。他希望把中国竹笛与丝竹管乐丰富而明亮的声音分享给北卡社区。"
+    bio = "Yanxin \"Jeff\" Luo is a software student and former embedded engineer. He began playing the Dizi, the Chinese bamboo flute, at age ten. A versatile music lover, Jeff has founded and performed in folk and electro-acoustic bands, and is skilled in several instruments including the Xiao and guitar. He is passionate about sharing the vibrant sounds of Chinese woodwinds with the North Carolina community.\n\nAbout the instrument: The Dizi is a traditional Chinese transverse flute with a history of over 9,000 years. Its unique, shimmering timbre is created by the Di Mo, a thin bamboo membrane that vibrates when played. Known for its expressive range, the Dizi can evoke both the peaceful stillness of nature and the jubilant energy of a festive celebration.\n\nJeff 是一名软件专业学生，也曾从事嵌入式工程工作。他十岁开始学习笛子，热爱多种音乐形式，曾组建并参与民谣乐队和电声乐队，也擅长箫、吉他等乐器。他希望把中国竹笛与丝竹管乐丰富而明亮的声音分享给北卡社区。"
 
 [[categories]]
   name = "打击乐 (Percussion Instruments)"

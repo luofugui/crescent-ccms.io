@@ -3,6 +3,7 @@ title = "Youth Orchestra"
 date = 2026-05-03T12:00:00-05:00
 draft = false
 featured_image = "/img/home.jpg"
+aliases = ["/about/youth-orchestra/"]
 +++
 
 ## 青少年民乐团
