@@ -23,15 +23,15 @@ aliases = ["/about/musician/"]
 [[categories]]
   name = "弦乐 (Bowed String Instruments)"
   [[categories.musicians]]
-    name = "Liqi Zhang"
-    instrument = "二胡 (Erhu)"
-    photo = "liqizhang-new.png"
-    bio = "Liqi Zhang, is an Erhu musician and an electrical engineer. He started playing Erhu from age 4 and learned for 8 years. He keeps his passion about broadcasting Chinese music and culture, and teaching younger generations."
-  [[categories.musicians]]
     name = "Ni Yuan"
     instrument = "二胡 / 高胡 (Erhu / Gaohu)"
     photo = "niyuan.jpg"
     bio = "Ni Yuan is an accomplished Erhu and Gaohu soloist. She received a Bachelor's degree in Erhu Performance from Wuhan Conservatory of Music, and a Master's degree in Ethnomusicology from Kent State University. Ni has extensive experience performing with Chinese instrumental orchestras and has performed solo in numerous concerts in China and the U.S."
+  [[categories.musicians]]
+    name = "Liqi Zhang"
+    instrument = "二胡 (Erhu)"
+    photo = "liqizhang-new.png"
+    bio = "Liqi Zhang, is an Erhu musician and an electrical engineer. He started playing Erhu from age 4 and learned for 8 years. He keeps his passion about broadcasting Chinese music and culture, and teaching younger generations."
 
 [[categories]]
   name = "管乐 (Wind Instruments)"
