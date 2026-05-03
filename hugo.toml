@@ -52,17 +52,21 @@ title = "NC Chinese Music Ensemble, NCCME"
     url  = "/gallery/"
     weight = 3
   [[menu.main]]
+    name = "Youth Orchestra"
+    url  = "/about/youth-orchestra/"
+    weight = 4
+  [[menu.main]]
     name = "Videos"
     url  = "/videos/"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "Contact"
     url  = "/contact/"
-    weight = 6
+    weight = 7
   [[menu.main]]
     name = "Performances"
     url = "/performances/"
-    weight = 5
+    weight = 6
 
 [markup]
   [markup.goldmark]

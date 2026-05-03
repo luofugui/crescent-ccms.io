@@ -22,6 +22,7 @@
           <div class="w-100 w-45-l pa3">
             <div class="flex flex-column flex-row-ns items-center">
               <!-- Left Column: Image -->
+              {{ if .photo }}
               <div class="w-100 w-30-ns">
                 {{ $image := $.Page.Resources.GetMatch .photo }}
                 {{ if $image }}
@@ -31,8 +32,9 @@
                   <p style="color: red; font-size: 12px;">Image not found in page bundle: {{ .photo }}</p>
                 {{ end }}
               </div>
+              {{ end }}
               <!-- Right Column: Text -->
-              <div class="w-100 w-70-ns pa2 pl3-ns">
+              <div class="w-100 {{ if .photo }}w-70-ns{{ end }} pa2 pl3-ns">
                 <h3 class="f3 mt3 mt0-ns">{{ .name }} - {{ .instrument }}</h3>
                 <p class="f4 black-70 lh-copy">{{ .bio | markdownify }}</p>
               </div>

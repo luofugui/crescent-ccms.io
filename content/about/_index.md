@@ -39,4 +39,11 @@ NC Chinese Music Ensemble, NCCME is a non-profit music studio established in the
       <p class="f5 lh-copy black-60">Become a part of our community.</p>
     </a>
   </div>
+
+  <div class="w-100 w-45-ns mb4 bg-near-white br2 shadow-4 grow">
+    <a href="youth-orchestra/" class="db pa4 link dim black no-underline">
+      <h3 class="f3 mt0 mb2">Youth Orchestra</h3>
+      <p class="f5 lh-copy black-60">青少年民乐团：会费制，每年保证 2 场演出和 8 次排练。</p>
+    </a>
+  </div>
 </div>
