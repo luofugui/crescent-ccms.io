@@ -1,5 +1,5 @@
 +++
-title = "Xiaonan \"Sunny\" Xiao"
+title = "Xiaonan \"Sunny\" Sun"
 date = 2026-05-04T12:00:00-04:00
 draft = false
 instrument = "扬琴 (Yangqin / Chinese Dulcimer)"

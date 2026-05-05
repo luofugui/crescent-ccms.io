@@ -10,7 +10,7 @@ aliases = ["/about/musician/"]
 [[categories]]
   name = "弹拨乐 (Plucked Instruments)"
   [[categories.musicians]]
-    name = "Xiaonan \"Sunny\" Xiao"
+    name = "Xiaonan \"Sunny\" Sun"
     instrument = "扬琴 (Yangqin / Chinese Dulcimer)"
     photo = "xiaonan-sunny-xiao/Xiaonan.JPEG"
     profile = "xiaonan-sunny-xiao/"
