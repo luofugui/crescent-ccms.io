@@ -1,7 +1,6 @@
 theme = "ananke"
 
-baseURL = "https://ncchinesemusic.org/"
-relativeURLs = true
+baseURL = "https://luofugui.github.io/crescent-ccms.io/"
 languageCode = "en-us"
 title = "NC Chinese Music Ensemble, NCCME"
 
