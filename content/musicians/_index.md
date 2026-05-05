@@ -69,7 +69,7 @@ aliases = ["/about/musician/"]
   [[categories.musicians]]
     name = "Cheng Liang"
     instrument = "打击乐 (Percussion)"
-    photo = "cheng-liang/ChengLiang_Drum.jpg"
+    photo = "cheng-liang/Chengliang_Drum.jpg"
     profile = "cheng-liang/"
     bio = "Cheng Liang is one of the early members of NC Chinese Music Ensemble and a versatile musician with a strong interest in both traditional and contemporary Chinese ensemble music. In percussion, he performs across Chinese and Western instruments, including cajon, chime bar, drum, cymbals, and woodblock, bringing rhythmic color and expressive support to new Chinese music arrangements.\n\n程梁老师是北卡民乐团成立初期就加入的成员之一。作为打击乐演奏者，他兼具中、西打击乐经验，曾在乐团演出中使用卡洪箱、钟音条，也演奏鼓、镲、木鱼等打击乐器，为新民乐合奏增添丰富的节奏层次与音色变化。"
 +++
