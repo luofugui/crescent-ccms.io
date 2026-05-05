@@ -5,8 +5,8 @@
     {{ .Content }}
   </div>
 
-  {{/* Define a list of background colors to cycle through */}}
-  {{ $colors := slice "bg-near-white" "bg-light-gray" "bg-washed-blue" "bg-washed-green" }}
+  {{/* Keep instrument sections in one calm visual system. */}}
+  {{ $colors := slice "bg-light-gray" }}
 
   {{/* Loop through each instrument category defined in the front matter */}}
   {{ range $index, $category := .Params.categories }}
@@ -16,30 +16,28 @@
     {{/* Create a container for the category block with spacing and background color */}}
     <div class="pa4 mt5 br3 shadow-1 {{ $color }}">
       <h2 class="f2 mt0">{{ .name }}</h2>
-      <div class="flex flex-wrap justify-around">
+      <div class="musician-grid">
         {{/* Loop through each musician in the category */}}
         {{ range .musicians }}
-          <div class="w-100 w-45-l pa3">
-            <div class="flex flex-column flex-row-ns items-center">
+          <article class="musician-card musician-card-theme-{{ mod $index (len $colors) }}">
+            <div class="musician-card-inner">
               <!-- Left Column: Image -->
               {{ if .photo }}
-              <div class="w-100 w-30-ns">
-                {{ $image := $.Page.Resources.GetMatch .photo }}
-                {{ if $image }}
-                  {{/* Display the original image. The browser will scale it to fit the container. */}}
-                  <img src="{{ $image.RelPermalink }}" class="db w-100 br2" alt="Photo of {{ .name }}">
-                {{ else }}
-                  <p style="color: red; font-size: 12px;">Image not found in page bundle: {{ .photo }}</p>
-                {{ end }}
+              <div class="musician-card-image">
+                <img src="{{ printf "musicians/%s" .photo | relURL }}" alt="Photo of {{ .name }}">
               </div>
               {{ end }}
               <!-- Right Column: Text -->
-              <div class="w-100 {{ if .photo }}w-70-ns{{ end }} pa2 pl3-ns">
-                <h3 class="f3 mt3 mt0-ns">{{ .name }} - {{ .instrument }}</h3>
-                <p class="f4 black-70 lh-copy">{{ .bio | markdownify }}</p>
+              <div class="musician-card-body">
+                <h3>{{ .name }}</h3>
+                <p class="musician-instrument">{{ .instrument }}</p>
+                <div class="musician-bio f4 black-70 lh-copy">{{ .bio | markdownify }}</div>
+                {{ with .profile }}
+                  <a class="musician-profile-link" href="{{ printf "musicians/%s" . | relURL }}">View Profile</a>
+                {{ end }}
               </div>
             </div>
-          </div>
+          </article>
         {{ end }}
       </div>
     </div>

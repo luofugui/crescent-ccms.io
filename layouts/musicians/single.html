@@ -1,0 +1,148 @@
+{{ define "main" }}
+<article class="musician-profile pa3 pa5-ns">
+  <a class="musician-back-link" href="{{ "musicians/" | relURL }}" aria-label="Back to Musicians">
+    <span class="musician-back-icon" aria-hidden="true">
+      <img class="musician-back-arrow" src="{{ "musicians/left-svgrepo-com.svg" | relURL }}" alt="">
+      <img class="musician-back-pipa" src="{{ "musicians/pipa-china-svgrepo-com.svg" | relURL }}" alt="">
+    </span>
+    <span>Musicians</span>
+  </a>
+
+  <div class="musician-profile-header">
+    {{ with .Params.photo }}
+      <div class="musician-profile-photo">
+        {{ $image := $.Resources.GetMatch . }}
+        {{ if $image }}
+          <img src="{{ $image.RelPermalink }}" alt="Photo of {{ $.Title }}">
+        {{ else }}
+          <img src="{{ printf "%s%s" $.RelPermalink . }}" alt="Photo of {{ $.Title }}">
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <div class="musician-profile-copy">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.instrument }}
+        <p class="musician-profile-instrument">{{ . }}</p>
+      {{ end }}
+      <div class="musician-bio f4 black-70 lh-copy">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+
+  {{ $mainPhoto := .Params.photo }}
+  {{ $highlightPhotos := slice }}
+  {{ range .Resources.ByType "image" }}
+    {{ if ne .Name $mainPhoto }}
+      {{ $highlightPhotos = $highlightPhotos | append . }}
+    {{ end }}
+  {{ end }}
+
+  <section class="musician-gallery">
+    <h2>演出精彩瞬间 Performance Highlights</h2>
+    {{ if gt (len $highlightPhotos) 0 }}
+      <div class="musician-gallery-grid">
+        {{ range $photoIndex, $photo := $highlightPhotos }}
+          <button class="musician-gallery-item" type="button" data-full="{{ $photo.RelPermalink }}" data-index="{{ $photoIndex }}" aria-label="Open performance photo">
+            <img src="{{ .RelPermalink }}" alt="Performance photo">
+            <span class="musician-gallery-mask">View</span>
+          </button>
+        {{ end }}
+      </div>
+      <div class="musician-lightbox" data-musician-lightbox hidden>
+        <button class="musician-lightbox-close" type="button" aria-label="Close performance photo">×</button>
+        <button class="musician-lightbox-nav musician-lightbox-prev" type="button" data-lightbox-prev aria-label="Previous performance photo">‹</button>
+        <div class="musician-lightbox-stage">
+          <img src="" alt="Expanded performance photo">
+          <p class="musician-lightbox-count" data-lightbox-count></p>
+        </div>
+        <button class="musician-lightbox-nav musician-lightbox-next" type="button" data-lightbox-next aria-label="Next performance photo">›</button>
+      </div>
+    {{ else }}
+      <p class="musician-gallery-empty">更多演出照片即将更新。</p>
+    {{ end }}
+  </section>
+</article>
+
+<script>
+(() => {
+  const profile = document.currentScript.previousElementSibling;
+  const lightbox = profile.querySelector("[data-musician-lightbox]");
+  if (!lightbox) return;
+
+  const galleryButtons = Array.from(profile.querySelectorAll(".musician-gallery-item"));
+  const photos = galleryButtons.map((button) => button.dataset.full);
+  const expandedImage = lightbox.querySelector("img");
+  const countLabel = lightbox.querySelector("[data-lightbox-count]");
+  const previousButton = lightbox.querySelector("[data-lightbox-prev]");
+  const nextButton = lightbox.querySelector("[data-lightbox-next]");
+  const closeButton = lightbox.querySelector(".musician-lightbox-close");
+  let currentIndex = 0;
+  let touchStartX = 0;
+
+  const showPhoto = (index) => {
+    currentIndex = (index + photos.length) % photos.length;
+    expandedImage.src = photos[currentIndex];
+    countLabel.textContent = `${currentIndex + 1} / ${photos.length}`;
+  };
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    expandedImage.removeAttribute("src");
+    document.body.classList.remove("musician-lightbox-open");
+  };
+
+  const openLightbox = (index) => {
+    showPhoto(index);
+    lightbox.hidden = false;
+    document.body.classList.add("musician-lightbox-open");
+  };
+
+  const showPrevious = () => showPhoto(currentIndex - 1);
+  const showNext = () => showPhoto(currentIndex + 1);
+
+  galleryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      openLightbox(Number(button.dataset.index));
+    });
+  });
+
+  previousButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showPrevious();
+  });
+
+  nextButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showNext();
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  lightbox.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0].clientX;
+    const swipeDistance = touchEndX - touchStartX;
+    if (Math.abs(swipeDistance) < 45) return;
+    if (swipeDistance > 0) {
+      showPrevious();
+    } else {
+      showNext();
+    }
+  }, { passive: true });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+    if (event.key === "ArrowLeft" && !lightbox.hidden) showPrevious();
+    if (event.key === "ArrowRight" && !lightbox.hidden) showNext();
+  });
+})();
+</script>
+{{ end }}
