@@ -44,7 +44,7 @@
     {{ if gt (len $highlightPhotos) 0 }}
       <div class="musician-gallery-grid">
         {{ range $photoIndex, $photo := $highlightPhotos }}
-          <button class="musician-gallery-item" type="button" data-full="{{ $photo.RelPermalink }}" data-index="{{ $photoIndex }}" aria-label="Open performance photo">
+          <button class="musician-gallery-item" type="button" data-index="{{ $photoIndex }}" aria-label="Open performance photo">
             <img src="{{ .RelPermalink }}" alt="Performance photo">
             <span class="musician-gallery-mask">View</span>
           </button>
@@ -72,7 +72,7 @@
   if (!lightbox) return;
 
   const galleryButtons = Array.from(profile.querySelectorAll(".musician-gallery-item"));
-  const photos = galleryButtons.map((button) => button.dataset.full);
+  const photos = galleryButtons.map((button) => button.querySelector("img").src);
   const expandedImage = lightbox.querySelector("img");
   const countLabel = lightbox.querySelector("[data-lightbox-count]");
   const previousButton = lightbox.querySelector("[data-lightbox-prev]");
