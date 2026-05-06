@@ -12,8 +12,8 @@ aliases = ["/about/musician/"]
   [[categories.musicians]]
     name = "Xiaonan \"Sunny\" Sun"
     instrument = "扬琴 (Yangqin / Chinese Dulcimer)"
-    photo = "xiaonan-sunny-xiao/Xiaonan.JPEG"
-    profile = "xiaonan-sunny-Sun/"
+    photo = "xiaonan-sunny-sun/Xiaonan.JPEG"
+    profile = "xiaonan-sunny-sun/"
     bio = "Xiaonan \"Sunny\" Sun is a renowned yangqin performer and the Artistic Director of Crescent Chinese Music Studio. She graduated from the Music Performance Yangqin program at the Music Department of Shandong University of Arts, with a minor in percussion.\n\nAfter graduation, she worked with the Red Poppy Percussion Ensemble and then the Beijing Chinese Orchestra. In 2018, she joined Crescent Chinese Music Studio as Artistic Director, bringing deep professional experience in Chinese instrumental performance, ensemble direction, and traditional music education."
   [[categories.musicians]]
     name = "Sunnie Ling"
